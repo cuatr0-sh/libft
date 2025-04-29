@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 21:18:06 by root              #+#    #+#             */
-/*   Updated: 2025/04/27 20:00:28 by root             ###   ########.fr       */
+/*   Created: 2025/04/26 19:44:44 by root              #+#    #+#             */
+/*   Updated: 2025/04/27 19:58:33 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-void	*ft_memmove(void *dst, const void *src, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	char	*ptr;
 
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
-	if (d < s)
-		while (n--)
-			*d++ = *s++;
-	else
+	ptr = ((void *)0);
+	while (*s)
 	{
-		d = d + n;
-		s = s + n;
-		while (n--)
-			*--d = *--s;
+		if (*s == c)
+			ptr = ((char *)s);
+		s++;
 	}
-	return (dst);
+	return (ptr);
 }
+/*
+#include <string.h>
+#include <stdio.h>
+
+int	main(int argc, char **argv)
+{
+	(void)argc;
+	printf("strrchr: %s\n", strrchr(argv[1], argv[2][0]));
+	printf("ft_strrchr: %s\n", ft_strrchr(argv[1], argv[2][0]));
+}*/

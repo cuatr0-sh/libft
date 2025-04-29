@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 21:18:06 by root              #+#    #+#             */
-/*   Updated: 2025/04/27 20:00:28 by root             ###   ########.fr       */
+/*   Created: 2025/04/28 15:46:35 by root              #+#    #+#             */
+/*   Updated: 2025/04/29 13:29:16 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+int	ft_memcmp(const void s1, const vooid s2, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	
+}
 
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
-	if (d < s)
-		while (n--)
-			*d++ = *s++;
-	else
-	{
-		d = d + n;
-		s = s + n;
-		while (n--)
-			*--d = *--s;
-	}
-	return (dst);
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int	main(int argc, char **argv)
+{
+	(void)argc;
+	printf("ft_memcmp: %s\n", ft_memcmp(&argv[1], &argv[2], atoi(argv[3])));
+	printf("memcmp: %s\n", memcmp(&argv[1], &argv[2], atoi(argv[3])));
+	return (0);
 }
