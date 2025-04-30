@@ -6,14 +6,13 @@
 /*   By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/30 05:06:56 by asoria            #+#    #+#             */
-/*   Updated: 2025/04/27 22:24:41 by root             ###   ########.fr       */
+/*   Updated: 2025/04/30 12:07:58 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-int		ft_strlen(char *str);
 int		ft_isalnum(int n);
 int		ft_isalpha(int n);
 int		ft_isascii(int n);
@@ -22,7 +21,11 @@ int		ft_isprint(int n);
 int		ft_tolower(int ch);
 int		ft_toupper(int ch);
 int		ft_atoi(const char *str);
-int		ft_memcmp(const void s1, const void s2, size_t n);
+int		ft_memcmp(const void *dst, const void *str, size_t n)
+int		ft_strncmp(const char s1, const char s2, size_t n);
+
+char	*strchr(const char *s, int c);
+char	*strrchr(const char *s, int c);
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -30,6 +33,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 
+size_t	ft_strlen(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 

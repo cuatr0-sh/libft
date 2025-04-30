@@ -6,20 +6,23 @@
 /*   By: asoria <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 20:37:02 by asoria            #+#    #+#             */
-/*   Updated: 2025/04/28 20:38:55 by asoria           ###   ########.fr       */
+/*   Updated: 2025/04/30 10:46:39 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	
-}
+	void	*res;
 
-#include <stdlib.h>
-
-int	main(int argc, char **argv)
-{
-	
+	res = malloc(size * nmemb);
+	if (!res)
+		return ((void *)0);
+	else
+	{
+		ft_bzero(res, size * nmemb);
+		return (res);
+	}
 }
