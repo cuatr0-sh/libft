@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 15:46:35 by root              #+#    #+#             */
-/*   Updated: 2025/04/30 23:19:06 by asoria           ###   ########.fr       */
+/*   Updated: 2025/05/05 17:59:35 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 
 int	ft_memcmp(const void *dst, const void *str, size_t n)
 {
-	size_t			i;
-	int				diff;
 	unsigned char	*str2;
 	unsigned char	*dst2;
 
 	dst2 = (unsigned char*)dst;
 	str2 = (unsigned char *)str;
-	i = 0;
-	diff = 0;
 	if (n)
 		while (n--)
 			if (*dst2++ != *str2++)
 				return (*(--dst2) - *(--str2));
 	return (0);
 }
-
+/*
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,4 +37,4 @@ int	main(int argc, char **argv)
 	printf("memcmp: %s\n", memcmp(&argv[1], &argv[2], atoi(argv[3])));
 	return (0);
 }
-
+*/

@@ -6,7 +6,7 @@
 #    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
-#    Updated: 2025/05/01 14:40:07 by asoria           ###   ########.fr        #
+#    Updated: 2025/05/05 18:06:24 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,16 +36,16 @@ SRC = ft_substr.c \
       ft_strnstr.c \
       ft_strlcpy.c \
       ft_tolower.c \
-      # ft_strdup.c 
-      # ft_strmapi.c 
-      # ft_putnbr_fd.c 
-      # ft_itoa.c 
-      # ft_split.c 
-      # ft_striteri.c 
-      # ft_putendl_fd.c 
-      # ft_putchar_fd.c
-      # ft_strtrim.c 
-      # ft_strjoin.c
+      ft_strdup.c \
+      ft_strmapi.c \
+      ft_putnbr_fd.c \
+      ft_itoa.c \
+      ft_split.c \
+      ft_striteri.c \
+      ft_putendl_fd.c \
+      ft_putchar_fd.c \
+      ft_strtrim.c \
+      ft_strjoin.c
 
 # BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
         ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
@@ -56,7 +56,7 @@ SRCOBJ = $(SRC:.c=.o)
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-# INCLUDE = -I.
+INCLUDE = -I.
 
 all: $(NAME)
 

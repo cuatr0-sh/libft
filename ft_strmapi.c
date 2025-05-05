@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 00:44:01 by asoria            #+#    #+#             */
-/*   Updated: 2025/05/05 17:40:13 by asoria           ###   ########.fr       */
+/*   Created: 2025/05/05 18:32:52 by asoria            #+#    #+#             */
+/*   Updated: 2025/05/05 18:51:18 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char *ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*ret;
-
-	if (!s)
-		return (0);
-	if (ft_strlen(s) < start)
-		len = 0;
-	if (ft_strlen(s + start) < len)
-		len = ft_strlen(s + start);
-	ret = malloc(sizeof(char) * (len + 1));
-	if (!ret)
-		return (0);
-	ft_strlcpy(ret, s + start, len + 1);
-	return (ret);
+	int	i;
+	char	*d;
+	d = ft_strdup(s);
+	if (!d)
+		return ((void *)0);
+	i = 0; 
+	while(d[i])
+	{
+		d[i] = f(i, d[i]);
+		i++;
+	}
+	return (d);
 }
