@@ -6,15 +6,15 @@
 /*   By: asoria <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 20:12:07 by asoria            #+#    #+#             */
-/*   Updated: 2025/04/28 20:36:19 by asoria           ###   ########.fr       */
+/*   Updated: 2025/05/06 03:43:41 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t  b;
+	size_t	b;
 	size_t	l;
 
 	b = 0;

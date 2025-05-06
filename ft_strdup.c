@@ -6,18 +6,18 @@
 /*   By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:08:39 by asoria            #+#    #+#             */
-/*   Updated: 2025/05/05 18:32:19 by asoria           ###   ########.fr       */
+/*   Updated: 2025/05/06 02:03:06 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*str;
 	size_t	len;
-	
+
 	if (!s)
 		return ((void *)0);
 	len = ft_strlen(s) + 1;

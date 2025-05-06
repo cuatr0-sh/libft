@@ -6,14 +6,14 @@
 /*   By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 18:53:08 by asoria            #+#    #+#             */
-/*   Updated: 2025/05/05 19:28:17 by asoria           ###   ########.fr       */
+/*   Updated: 2025/05/06 03:55:55 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
 

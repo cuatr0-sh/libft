@@ -6,14 +6,14 @@
 /*   By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 00:44:01 by asoria            #+#    #+#             */
-/*   Updated: 2025/05/05 17:40:13 by asoria           ###   ########.fr       */
+/*   Updated: 2025/05/06 03:52:26 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-char *ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*ret;
 

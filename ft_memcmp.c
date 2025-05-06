@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 15:46:35 by root              #+#    #+#             */
-/*   Updated: 2025/05/05 17:59:35 by asoria           ###   ########.fr       */
+/*   Updated: 2025/05/06 02:02:20 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_memcmp(const void *dst, const void *str, size_t n)
 	unsigned char	*str2;
 	unsigned char	*dst2;
 
-	dst2 = (unsigned char*)dst;
+	dst2 = (unsigned char *)dst;
 	str2 = (unsigned char *)str;
 	if (n)
 		while (n--)

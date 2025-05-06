@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 22:06:12 by asoria            #+#    #+#             */
-/*   Updated: 2025/04/10 23:58:41 by root             ###   ########.fr       */
+/*   Updated: 2025/05/06 03:47:39 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ int	ft_atoi(const char *str)
 		neg = -1;
 		i++;
 	}
+	else if (str[i] == '+')
+		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = res * 10 + (str[i] - 48);
+		res = res * 10 + (str[i] - '0');
 		i++;
 	}
 	return (res * neg);

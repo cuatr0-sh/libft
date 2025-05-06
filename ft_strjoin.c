@@ -6,7 +6,7 @@
 /*   By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:51:54 by asoria            #+#    #+#             */
-/*   Updated: 2025/05/05 19:52:16 by asoria           ###   ########.fr       */
+/*   Updated: 2025/05/06 03:53:21 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		len1 = ft_strlen(s1);
 		len2 = ft_strlen(s2);
-		str = (char*)malloc(sizeof(char) * (len1 + len2 + 1));
+		str = (char *)malloc(sizeof(char) * (len1 + len2 + 1));
 		if (str == NULL)
 			return (NULL);
 		i = -1;

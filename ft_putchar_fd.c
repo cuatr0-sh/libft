@@ -6,13 +6,13 @@
 /*   By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:53:37 by asoria            #+#    #+#             */
-/*   Updated: 2025/05/05 17:55:08 by asoria           ###   ########.fr       */
+/*   Updated: 2025/05/06 03:55:24 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
