@@ -6,24 +6,24 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 19:44:44 by root              #+#    #+#             */
-/*   Updated: 2025/05/06 03:41:58 by root             ###   ########.fr       */
+/*   Updated: 2025/05/12 21:21:51 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*ptr;
+	const char	*ptr;
 
 	ptr = ((void *)0);
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			ptr = ((char *)s);
 		s++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)s);
-	return (ptr);
+	return ((char *)ptr);
 }
 /*
 #include <string.h>
