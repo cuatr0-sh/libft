@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 21:18:06 by root              #+#    #+#             */
-/*   Updated: 2025/04/27 20:00:28 by root             ###   ########.fr       */
+/*   Updated: 2025/05/12 23:54:31 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 	d = (unsigned char *)dst;
 	s = (const unsigned char *)src;
+	if (d == ((void *)0) && s == ((void *)0))
+		return ((void *)0);
 	if (d < s)
 		while (n--)
 			*d++ = *s++;
