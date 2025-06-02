@@ -12,7 +12,8 @@
 
 NAME = libft.a
 
-SRC = ft_putstr.c \
+SRC = ft_putchar.c \
+      ft_putstr.c \
       ft_substr.c \
       ft_isprint.c \
       ft_memcpy.c \

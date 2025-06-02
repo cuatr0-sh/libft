@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+void	ft_putchar(char c);
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
