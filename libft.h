@@ -18,6 +18,8 @@
 # include <unistd.h>
 
 void	ft_putchar(char c);
+void	ft_putstr(char *str);
+void	ft_putnbr(int nb);
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
