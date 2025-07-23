@@ -6,13 +6,14 @@
 /*   By: asoria <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 21:51:58 by asoria            #+#    #+#             */
-/*   Updated: 2025/02/18 21:52:54 by asoria           ###   ########.fr       */
+/*   Updated: 2025/07/23 06:08:23 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }

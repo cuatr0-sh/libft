@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 04:05:06 by root              #+#    #+#             */
-/*   Updated: 2025/05/06 04:05:07 by root             ###   ########.fr       */
+/*   Updated: 2025/07/23 06:09:48 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int nb);
+int		ft_putchar(char c);
+int		ft_putnbr(int n);
+int		ft_putstr(char *str);
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
