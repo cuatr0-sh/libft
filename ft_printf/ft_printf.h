@@ -13,9 +13,7 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <unistd.h>
+# include "../libft.h"
 
 int	ft_printf(char const *fmt, ...);
 int	print_addr(void *ptr);
