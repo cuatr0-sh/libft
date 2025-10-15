@@ -35,6 +35,7 @@ SRC =	ft_putchar.c \
 	ft_strlcat.c \
 	ft_memcmp.c \
 	ft_atoi.c \
+	ft_atol.c \
 	ft_bzero.c \
 	ft_strnstr.c \
 	ft_strlcpy.c \
