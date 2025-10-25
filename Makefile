@@ -6,7 +6,7 @@
 #    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
-#    Updated: 2025/07/23 06:20:23 by asoria           ###   ########.fr        #
+#    Updated: 2025/10/25 20:35:37 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRC =	ft_putchar.c \
 	ft_memcmp.c \
 	ft_atoi.c \
 	ft_atol.c \
+	ft_atof.c \
 	ft_bzero.c \
 	ft_strnstr.c \
 	ft_strlcpy.c \
