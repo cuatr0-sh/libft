@@ -6,7 +6,7 @@
 #    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
-#    Updated: 2025/10/25 20:35:37 by asoria           ###   ########.fr        #
+#    Updated: 2025/11/06 22:08:45 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,7 @@ all: $(NAME)
 
 $(NAME): $(SRCOBJ)
 	ar rcs $@ $^
-
+	@echo -e "\n\033[32m[✔] Built $(NAME)\033[0m"
 # bonus: $(BONUSOBJ)
 # 	ar rcs $(NAME) $^
 
