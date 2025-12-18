@@ -6,7 +6,7 @@
 #    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
-#    Updated: 2025/11/06 22:11:49 by asoria           ###   ########.fr        #
+#    Updated: 2025/12/18 23:05:43 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,24 +66,33 @@ SRCOBJ = $(SRC:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDE = -I.
+MAKEFLAGS += -j$(shell nproc) --no-print-directory
 
 all: $(NAME)
 
+
 $(NAME): $(SRCOBJ)
-	ar rcs $@ $^
+	@ar rcs $@ $^
+	@echo -e "\033[35mBuilding $@\033[0m"
 	@echo -e "\033[32m[✔] Built $(NAME)\033[0m"
-# bonus: $(BONUSOBJ)
+# 	bonus: $(BONUSOBJ)
 # 	ar rcs $(NAME) $^
 
-%.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-
 clean:
-	rm -f $(SRCOBJ) # $(BONUSOBJ)
+	@echo -e "\033[31mDestroyed\033[0m object files"
+	@rm -f $(SRCOBJ) # $(BONUSOBJ)
 
-fclean: clean
-	rm -f $(NAME)
+fclean:
+	@echo -e "\033[031mDestroyed\033[0m $(NAME)"
+	@rm -f $(NAME)
 
-re: fclean all
+re:
+	@$(MAKE) clean
+	@$(MAKE) fclean
+	@$(MAKE) all
+
+%.o: %.c
+	@echo -e "\033[34mCompiling\033[0m $@"
+	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 .PHONY: all clean fclean re # bonus
