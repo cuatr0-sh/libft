@@ -6,17 +6,18 @@
 #    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
-#    Updated: 2025/12/19 00:37:34 by asoria           ###   ########.fr        #
+#    Updated: 2025/12/19 00:55:58 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= libft.a
 CC		?= cc
 CFLAGS		?= -Wall -Wextra -Werror
-SRCOBJ		= $(SRC:.c=.o)
 CPPFLAGS	:= -I.
 AR		?= ar
 ARFLAGS		?= rcs
+RM		?= rm -f
+SRCOBJ		= $(SRC:.c=.o)
 
 SRC =	ft_putchar.c \
 	ft_putstr.c \
@@ -69,11 +70,11 @@ $(NAME): $(SRCOBJ)
 	$(AR) $(ARFLAGS) $@ $^
 
 clean:
-	rm -f $(SRCOBJ)
+	$(RM) $(SRCOBJ)
 
 fclean:
 	$(MAKE) clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re:
 	$(MAKE) fclean
