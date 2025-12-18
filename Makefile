@@ -6,16 +6,17 @@
 #    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
-#    Updated: 2025/12/19 00:16:03 by asoria           ###   ########.fr        #
+#    Updated: 2025/12/19 00:37:34 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= libft.a
-CC		:= cc
-CFLAGS		:= -Wall -Wextra -Werror
+CC		?= cc
+CFLAGS		?= -Wall -Wextra -Werror
 SRCOBJ		= $(SRC:.c=.o)
-INCLUDE		:= -I.
-MAKEFLAGS	+= -j$(shell nproc) --no-print-directory
+CPPFLAGS	:= -I.
+AR		?= ar
+ARFLAGS		?= rcs
 
 SRC =	ft_putchar.c \
 	ft_putstr.c \
@@ -65,25 +66,20 @@ all: $(NAME)
 
 
 $(NAME): $(SRCOBJ)
-	@ar rcs $@ $^
-	@printf "\033[36mBuilding\033[0m $@\n"
-	@printf "\033[32m[✔] Built $(NAME)\033[0m\n"
+	$(AR) $(ARFLAGS) $@ $^
 
 clean:
-	@echo -e "\033[31mDestroyed\033[0m object files in $(NAME)"
-	@rm -f $(SRCOBJ)
+	rm -f $(SRCOBJ)
 
 fclean:
-	@$(MAKE) clean
-	@echo -e "\033[031mDestroyed\033[0m $(NAME)"
-	@rm -f $(NAME)
+	$(MAKE) clean
+	rm -f $(NAME)
 
 re:
-	@$(MAKE) fclean
-	@$(MAKE) all
+	$(MAKE) fclean
+	$(MAKE) all
 
 %.o: %.c
-	@echo -e "\033[34mCompiling\033[0m $@"
-	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re
