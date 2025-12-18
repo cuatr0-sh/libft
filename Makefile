@@ -6,11 +6,16 @@
 #    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
-#    Updated: 2025/12/18 23:05:43 by asoria           ###   ########.fr        #
+#    Updated: 2025/12/19 00:16:03 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	libft.a
+NAME		:= libft.a
+CC		:= cc
+CFLAGS		:= -Wall -Wextra -Werror
+SRCOBJ		= $(SRC:.c=.o)
+INCLUDE		:= -I.
+MAKEFLAGS	+= -j$(shell nproc) --no-print-directory
 
 SRC =	ft_putchar.c \
 	ft_putstr.c \
@@ -56,38 +61,24 @@ SRC =	ft_putchar.c \
 	ft_printf/printf_print_hex.c \
 	ft_printf/printf_print_unsigned.c
 
-# BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-        ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-        ft_lstmap.c
-
-SRCOBJ = $(SRC:.c=.o)
-# BONUSOBJ = $(BONUS:.c=.o)
-
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-INCLUDE = -I.
-MAKEFLAGS += -j$(shell nproc) --no-print-directory
-
 all: $(NAME)
 
 
 $(NAME): $(SRCOBJ)
 	@ar rcs $@ $^
-	@echo -e "\033[35mBuilding $@\033[0m"
-	@echo -e "\033[32m[✔] Built $(NAME)\033[0m"
-# 	bonus: $(BONUSOBJ)
-# 	ar rcs $(NAME) $^
+	@printf "\033[36mBuilding\033[0m $@\n"
+	@printf "\033[32m[✔] Built $(NAME)\033[0m\n"
 
 clean:
-	@echo -e "\033[31mDestroyed\033[0m object files"
-	@rm -f $(SRCOBJ) # $(BONUSOBJ)
+	@echo -e "\033[31mDestroyed\033[0m object files in $(NAME)"
+	@rm -f $(SRCOBJ)
 
 fclean:
+	@$(MAKE) clean
 	@echo -e "\033[031mDestroyed\033[0m $(NAME)"
 	@rm -f $(NAME)
 
 re:
-	@$(MAKE) clean
 	@$(MAKE) fclean
 	@$(MAKE) all
 
@@ -95,4 +86,4 @@ re:
 	@echo -e "\033[34mCompiling\033[0m $@"
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-.PHONY: all clean fclean re # bonus
+.PHONY: all clean fclean re
