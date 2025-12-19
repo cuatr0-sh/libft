@@ -6,19 +6,30 @@
 #    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
-#    Updated: 2025/12/19 02:50:51 by asoria           ###   ########.fr        #
+#    Updated: 2025/12/19 03:23:50 by asoria           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
+#    Updated: 2025/12/19 03:08:56 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= libft.a
 CC		?= cc
-CFLAGS		?= -Wall -Wextra -Werror -Wpedantic
-CPPFLAGS	?= -I.
+CFLAGS		:= -Wall -Wextra -Werror -Wpedantic
+CPPFLAGS	:= -I.
 AR		?= ar
-ARFLAGS		?= rcs
-RM		?= rm
+ARFLAGS		:= rcs
+RM		?= rm -f
 OBJ_DIR		:= obj
-OBJ		:= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 FT_PRINTF_DIR	:= ft_printf
 FT_PRINTF_LIB	:= $(FT_PRINTF_DIR)/libftprintf.a
 
@@ -60,21 +71,21 @@ SRC =	ft_putchar.c \
 	ft_putendl_fd.c \
 	ft_putchar_fd.c \
 	ft_strtrim.c \
-	ft_strjoin.c \
-	ft_printf/ft_printf.c \
-	ft_printf/printf_print_addr.c \
-	ft_printf/printf_print_hex.c \
-	ft_printf/printf_print_unsigned.c
+	ft_strjoin.c
+
+OBJ		:= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 all: $(NAME)
 
+$(NAME): $(OBJ) $(FT_PRINTF_LIB)
+	cp $(FT_PRINTF_LIB) $(NAME)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
-$(NAME): $(OBJ)
-	$(AR) $(ARFLAGS) $@ $(OBJ)
-	$(MAKE) -C $(FT_PRINTF_DIR)
-	$(AR) x $(FT_PRINTF_LIB)
-	$(AR) $(ARFLAGS) $@ *.o
-	rm -f *.o
+$(OBJ_DIR)/%.o: %.c libft.h | $(OBJ_DIR)
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 $(FT_PRINTF_LIB):
 	$(MAKE) -C $(FT_PRINTF_DIR)
@@ -83,18 +94,13 @@ clean:
 	$(RM) -rf $(OBJ_DIR)
 	$(MAKE) -C $(FT_PRINTF_DIR) clean
 
-
 fclean:
 	$(MAKE) clean
+	$(RM) $(NAME)
 	$(MAKE) -C $(FT_PRINTF_DIR) fclean
-	$(RM) -f $(NAME)
 
 re:
 	$(MAKE) fclean
 	$(MAKE) all
-
-$(OBJ_DIR)/%.o: %.c
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re
