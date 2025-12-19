@@ -6,13 +6,13 @@
 #    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
-#    Updated: 2025/12/19 02:38:41 by asoria           ###   ########.fr        #
+#    Updated: 2025/12/19 02:50:51 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= libft.a
 CC		?= cc
-CFLAGS		?= -Wall -Wextra -Werror
+CFLAGS		?= -Wall -Wextra -Werror -Wpedantic
 CPPFLAGS	?= -I.
 AR		?= ar
 ARFLAGS		?= rcs
@@ -20,6 +20,7 @@ RM		?= rm
 OBJ_DIR		:= obj
 OBJ		:= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 FT_PRINTF_DIR	:= ft_printf
+FT_PRINTF_LIB	:= $(FT_PRINTF_DIR)/libftprintf.a
 
 SRC =	ft_putchar.c \
 	ft_putstr.c \
@@ -69,7 +70,14 @@ all: $(NAME)
 
 
 $(NAME): $(OBJ)
-	$(AR) $(ARFLAGS) $@ $^
+	$(AR) $(ARFLAGS) $@ $(OBJ)
+	$(MAKE) -C $(FT_PRINTF_DIR)
+	$(AR) x $(FT_PRINTF_LIB)
+	$(AR) $(ARFLAGS) $@ *.o
+	rm -f *.o
+
+$(FT_PRINTF_LIB):
+	$(MAKE) -C $(FT_PRINTF_DIR)
 
 clean:
 	$(RM) -rf $(OBJ_DIR)
@@ -78,6 +86,7 @@ clean:
 
 fclean:
 	$(MAKE) clean
+	$(MAKE) -C $(FT_PRINTF_DIR) fclean
 	$(RM) -f $(NAME)
 
 re:
