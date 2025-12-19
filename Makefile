@@ -6,18 +6,20 @@
 #    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
-#    Updated: 2025/12/19 00:55:58 by asoria           ###   ########.fr        #
+#    Updated: 2025/12/19 02:38:41 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:= libft.a
 CC		?= cc
 CFLAGS		?= -Wall -Wextra -Werror
-CPPFLAGS	:= -I.
+CPPFLAGS	?= -I.
 AR		?= ar
 ARFLAGS		?= rcs
-RM		?= rm -f
-SRCOBJ		= $(SRC:.c=.o)
+RM		?= rm
+OBJ_DIR		:= obj
+OBJ		:= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
+FT_PRINTF_DIR	:= ft_printf
 
 SRC =	ft_putchar.c \
 	ft_putstr.c \
@@ -66,21 +68,24 @@ SRC =	ft_putchar.c \
 all: $(NAME)
 
 
-$(NAME): $(SRCOBJ)
+$(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $@ $^
 
 clean:
-	$(RM) $(SRCOBJ)
+	$(RM) -rf $(OBJ_DIR)
+	$(MAKE) -C $(FT_PRINTF_DIR) clean
+
 
 fclean:
 	$(MAKE) clean
-	$(RM) $(NAME)
+	$(RM) -f $(NAME)
 
 re:
 	$(MAKE) fclean
 	$(MAKE) all
 
-%.o: %.c
+$(OBJ_DIR)/%.o: %.c
+	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re
