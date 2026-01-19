@@ -6,7 +6,7 @@
 #    By: asoria <asoria@student.42madrid.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/01 13:57:11 by asoria            #+#    #+#              #
-#    Updated: 2025/12/19 03:23:50 by asoria           ###   ########.fr        #
+#    Updated: 2026/01/20 00:07:13 by asoria           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC =	ft_putchar.c \
 	ft_memmove.c \
 	ft_toupper.c \
 	ft_strncmp.c \
+	ft_strcmp.c \
 	ft_putstr_fd.c \
 	ft_memchr.c \
 	ft_calloc.c \
