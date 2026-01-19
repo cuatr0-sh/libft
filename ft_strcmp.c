@@ -6,9 +6,11 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 00:07:21 by asoria            #+#    #+#             */
-/*   Updated: 2026/01/20 00:14:34 by asoria           ###   ########.fr       */
+/*   Updated: 2026/01/20 00:31:48 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	strcmp(const char *s1, const char *s2)
 {
