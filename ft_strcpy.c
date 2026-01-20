@@ -6,13 +6,13 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 04:18:23 by asoria            #+#    #+#             */
-/*   Updated: 2026/01/20 04:19:52 by asoria           ###   ########.fr       */
+/*   Updated: 2026/01/20 05:58:57 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	char *ret;
+	char	*ret;
 
 	ret = dst;
 	while (*src)
