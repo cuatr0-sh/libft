@@ -6,9 +6,11 @@
 /*   By: asoria <asoria@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 16:33:57 by asoria            #+#    #+#             */
-/*   Updated: 2026/01/29 16:36:56 by asoria           ###   ########.fr       */
+/*   Updated: 2026/01/29 16:40:23 by asoria           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t dsize)
 {
